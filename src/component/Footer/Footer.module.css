@@ -1,0 +1,14 @@
+.footer{
+    margin-top: auto;
+    padding: 25px;
+}
+.footer__link{
+    display: block;
+    max-width: max-content;
+    margin: 0 auto;
+    text-decoration: none;
+    color: #392b74;
+}
+.footer__link:hover{
+    color: #ab61ff;
+}

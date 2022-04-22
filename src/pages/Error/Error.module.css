@@ -1,0 +1,19 @@
+.error__title{
+    margin: 35px 0;
+    text-align: center;
+}
+.error__code{
+    font-size: 70px;
+    text-align: center;
+}
+.error__link{
+    text-decoration: none;
+    color: white;
+    display: block;
+    max-width: max-content;
+    margin: 0 auto;
+    border-bottom: 1px solid white;
+}
+.error__link:hover{
+    color: white;
+} 

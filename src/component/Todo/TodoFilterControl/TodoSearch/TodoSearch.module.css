@@ -1,0 +1,24 @@
+.todo-search{
+    border-bottom: 1px solid #5d15b0;
+}
+.todo-search__label{
+    display: flex;
+    align-items: center;
+}
+.todo-search__input{
+    background: transparent;
+    border: 0;
+    max-width: 130px;
+    color: white;
+    flex-grow: 1;
+}
+@media (max-width: 575px){
+    .todo-search__input{
+        max-width: 100%;
+    }
+}
+.todo-search__icon{
+    color: #8e32f9;
+    margin: 0 5px 0 0;
+    width: 13px;
+}

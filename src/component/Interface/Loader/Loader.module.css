@@ -1,0 +1,16 @@
+.loader{
+    width: 35px;
+    height: 35px;
+    display: block;
+    margin: 40px auto 50px auto;
+    color: rgb(169, 76, 227);
+    animation: spinner 1.2s linear infinite;
+}
+@keyframes spinner {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

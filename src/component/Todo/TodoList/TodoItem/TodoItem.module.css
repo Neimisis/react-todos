@@ -1,0 +1,104 @@
+.todo-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    width: 100%;
+    padding: 25px 15px 25px 15px;
+    position: relative;
+}
+@media (max-width:575px){
+    .todo-item{
+        flex-direction: column;
+    } 
+}
+.todo-item:nth-child(4n+1){
+    background: linear-gradient(to right, #20d6ff, #1564ac);
+}
+.todo-item:nth-child(4n+2){
+    background: linear-gradient(to right, #4002f7, #8721fe);
+}
+.todo-item:nth-child(4n+3){
+    background: linear-gradient(to right, #f103f8, #fc24cb);
+}
+.todo-item:nth-child(4n+4){
+    background: linear-gradient(to right, #f5610c, #f07f30);
+}
+.todo-item:not(:last-child){
+    margin: 0 0 15px 0;
+}
+.todo-item.todo-item--completed{
+    opacity: 0.3;
+    background: linear-gradient(to left, black, rgb(41, 41, 41));
+}
+.todo-item--completed .todo-item__description{
+    text-decoration: line-through;
+}
+.todo-item--edit .todo-item__input{
+    display: block;
+}
+.todo-item--edit .todo-item__description{
+    display: none;
+}
+.todo-item__wrap{
+    display: flex;
+    flex: 1;
+}
+@media (max-width:575px){
+    .todo-item__wrap{
+        margin: 0 0 15px 0;
+    } 
+}
+.todo-item__date{
+    font-size: .6rem;
+    opacity: 0.3;
+    position: absolute;
+    bottom: 5px;
+    right: 20px;
+    transition: opacity .3s ease;
+    width: max-content;
+}
+@media (max-width:575px){
+    .todo-item__date{
+        right: 50%;
+        transform: translateX(50%);
+    }
+}
+.todo-item__date:hover{
+    opacity: 0.7;
+}
+.todo-item__description{
+    width: 100%;
+    color: white;
+    margin: 0 15px 0 0;
+}
+@media (max-width:575px){
+    .todo-item__description{
+        margin: 0;
+        text-align: center;
+    }
+}
+.todo-item__button{
+    color: white;
+    border: 0;
+    background-color: transparent;
+}
+.todo-item__button:not(:last-child){
+    margin: 0 5px 0 0;
+}
+.todo-item__input{
+    border: 0;
+    background: transparent;
+    display: none;
+    outline: none;
+    width: 100%;
+    margin: 0 15px 0 0;
+    padding: 0;
+    border-bottom: 1px solid white;
+    color: white;
+}
+@media (max-width:575px){
+    .todo-item__input{
+        margin: 0;
+    }
+}

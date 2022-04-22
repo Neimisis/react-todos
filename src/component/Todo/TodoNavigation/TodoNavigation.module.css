@@ -1,0 +1,12 @@
+.todo-navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 25px 0;
+}
+@media (max-width:575px) {
+    .todo-navigation{
+        flex-direction: column;
+        align-items: center;
+    }
+}

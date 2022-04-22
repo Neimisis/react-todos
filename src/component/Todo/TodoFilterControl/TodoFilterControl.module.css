@@ -1,0 +1,27 @@
+.todo-filter-control{
+    display: flex;
+    justify-content: right;
+    margin: 0 0 20px 0;
+    flex-wrap:wrap;
+}
+@media (min-width:576px) {
+    .todo-filter-control > *:not(:last-child){
+        margin: 0 25px 0 0;
+    }
+}
+@media (max-width:576px) {
+    .todo-filter-control{
+        justify-content: space-between;
+    }
+    .todo-filter-control__search{
+        order:2;
+        flex-basis: 100%;
+        margin: 15px 0 0 0;
+    }
+    .todo-filter-control__sort{
+        flex-basis: 45%
+    }
+    .todo-filter-control__limit{
+        flex-basis: 45%
+    }
+}

@@ -1,0 +1,14 @@
+.about{
+
+}
+.about__title{
+    margin: 35px 0;
+    text-align: center;
+}
+.about__item{
+    text-align: center;
+}
+.about__label{
+    opacity: 0.5;
+    margin: 0 10px 0 0;
+}

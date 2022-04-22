@@ -1,0 +1,25 @@
+.todo-form{
+    display: flex;
+    margin: 0 0 40px 0;
+}
+.todo-form__input{
+    border: 1px solid #8e32f9;
+    color: white;
+    background-color: transparent;
+    padding: 15px;
+    width: 100%;
+    border-radius: 10px 0 0 10px;
+}
+.todo-form__input:focus::placeholder{
+    color: transparent;
+}
+.todo-form__input::placeholder{
+    color: white;
+}
+.todo-form__button{
+    background: linear-gradient(to right, #8e32f9, #600cfb);
+    border: 0;
+    border-radius: 0 10px 10px 0;
+    padding: 15px;
+    color: white;
+}

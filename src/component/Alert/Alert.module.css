@@ -1,0 +1,7 @@
+.alert{
+    position: fixed;
+    user-select: none;
+    pointer-events: none;
+    right: 10px;
+    top: 10px;
+}
