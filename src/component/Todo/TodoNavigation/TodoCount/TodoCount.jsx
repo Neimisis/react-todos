@@ -1,16 +1,21 @@
-import React, { useMemo, useState } from 'react'
-import config from '../../../../config.js'
-import cl from './TodoCount.module.css'
+import React, { useContext } from 'react';
+
+import config from '../../../../config.js';
+import { TodoContext } from '../../../../context/TodoContext.js';
+
+import cl from './TodoCount.module.css';
 
 
-const TodoCount = (props) => {
+const TodoCount = () => {
 
-    if (config.showRenderComponents) console.log('TodoCount')
+  if (config.showRenderComponents) console.info('TodoCount');
 
-    return (
-        <div className={cl['todo-count']}>{props.countTodo}</div>
-    );
+  const { countTodo } = useContext(TodoContext);
+
+  return (
+    <div className={cl['todo-count']}>{countTodo}</div>
+  );
 };
 
 
-export default TodoCount
+export default TodoCount;

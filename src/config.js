@@ -1,5 +1,5 @@
 const settings = {
-    showRenderComponents: false
-}
+  showRenderComponents: true,
+};
 
-export default settings
+export default settings;

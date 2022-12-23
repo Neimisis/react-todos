@@ -12,3 +12,23 @@
     opacity: 0.5;
     margin: 0 10px 0 0;
 }
+@media (max-width:575px) {
+    .about__label{
+        display: block;
+        margin: 0;
+    }
+}
+a.about__value{
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+}
+a.about__value:hover{
+    color: white;
+}
+@media (max-width:575px) {
+    .about__value{
+        overflow-x: auto;
+        display: block;
+    }
+}

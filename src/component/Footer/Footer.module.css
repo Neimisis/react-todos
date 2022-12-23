@@ -8,6 +8,7 @@
     margin: 0 auto;
     text-decoration: none;
     color: #392b74;
+    transition: color ease 0.3s;
 }
 .footer__link:hover{
     color: #ab61ff;

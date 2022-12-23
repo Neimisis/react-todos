@@ -1,9 +1,10 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import './App.css'
+import { HashRouter, Route, Routes } from 'react-router-dom';
+
+import './App.css';
 import Home from './pages/Home/Home.jsx';
-import About from './pages/About/About.jsx'
-import Error from './pages/Error/Error.jsx'
+import About from './pages/About/About.jsx';
+import Error from './pages/Error/Error.jsx';
 import Footer from './component/Footer/Footer.jsx';
 
 
@@ -17,8 +18,8 @@ class ErrorBoundary extends React.Component {
     // Catch errors in any components below and re-render with error message
     this.setState({
       error: error,
-      errorInfo: errorInfo
-    })
+      errorInfo: errorInfo,
+    });
     // You can also log error messages to an error reporting service here
   }
   
@@ -44,16 +45,16 @@ class ErrorBoundary extends React.Component {
 
 function App() {
   return (
-    <div className='app'>
+    <div className="app">
       <ErrorBoundary>
-        <BrowserRouter>
-            <Routes>
-              <Route path='/' element={<Home/>} />
-              <Route exact path='/about' element={<About/>} />
-              <Route path="*" element={<Error/>} />
-            </Routes>
+        <HashRouter>
+          <Routes>
+            <Route path="/" element={<Home/>} />
+            <Route path="/about" element={<About/>} />
+            <Route path="*" element={<Error/>} />
+          </Routes>
           <Footer/>
-        </BrowserRouter>
+        </HashRouter>
       </ErrorBoundary>
     </div>
   );

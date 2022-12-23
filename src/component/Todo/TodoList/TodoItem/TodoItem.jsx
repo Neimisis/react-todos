@@ -1,43 +1,45 @@
-import React, { useEffect, useRef, useState } from 'react'
-import config from '../../../../config'
-import cl from './TodoItem.module.css'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
-import { faPencil } from "@fortawesome/free-solid-svg-icons";
-import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
-import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
-import { useParams } from 'react-router-dom';
+import React, { useRef, useState } from 'react';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faPencil } from '@fortawesome/free-solid-svg-icons';
+import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
+
+import config from '../../../../config';
+
+import cl from './TodoItem.module.css';
 
 
 function TodoItem(props) {
 
-  if (config.showRenderComponents) console.log('TodoItem')
+  if (config.showRenderComponents) console.info('TodoItem');
 
-  const [todoEdit, setTodoEdit] = useState(false)
+  const [todoEdit, setTodoEdit] = useState(false);
 
   const refInput = useRef();
   const refDescription = useRef();
 
   const editTodoDescription = () => {
     if (todoEdit) {
-      setTodoEdit(false)
-      props.editTodo(props.id, refInput.current.value, props.todo.date, props.todo.completed)
+      setTodoEdit(false);
+      props.editTodo(props.id, refInput.current.value, props.todo.date, props.todo.completed);
     }
     else {
-      setTodoEdit(true)
+      setTodoEdit(true);
       refInput.current.value = refDescription.current.textContent;
-      setTimeout(() => { refInput.current.focus() }, 200)
+      setTimeout(() => { refInput.current.focus(); }, 200);
     }
-  }
+  };
 
   const onKeyDownInput = (e) => {
     if (e.keyCode === 13) {
-      refInput.current.blur()
+      refInput.current.blur();
     }
-  }
+  };
 
   const getDateString = (date) => {
-    date = new Date(date)
+    date = new Date(date);
     const options = {
       timezone: 'UTC',
       weekday: 'long',
@@ -46,10 +48,10 @@ function TodoItem(props) {
       day: 'numeric',
       hour: 'numeric',
       minute: 'numeric',
-      second: 'numeric'
-    }
-    return date.toLocaleString("ru", options)
-  }
+      second: 'numeric',
+    };
+    return date.toLocaleString('ru', options);
+  };
 
   return (
     <div className={cl['todo-item'] + (props.todo.completed ? ' ' + cl['todo-item--completed'] : '') + (todoEdit ? ' ' + cl['todo-item--edit'] : '')}>
@@ -64,11 +66,11 @@ function TodoItem(props) {
             : <button className={cl['todo-item__button']} onClick={() => props.compliteTodo(props.id, true)} ><FontAwesomeIcon icon={faCheckCircle} /></button>
         }
         <button className={cl['todo-item__button']} onClick={() => editTodoDescription()} ><FontAwesomeIcon icon={faPencil} /></button>
-        <button className={cl['todo-item__button']} onClick={() => {props.deleteTodo(props.id)}}><FontAwesomeIcon icon={faTrashAlt} /></button>
+        <button className={cl['todo-item__button']} onClick={() => {props.deleteTodo(props.id);}}><FontAwesomeIcon icon={faTrashAlt} /></button>
       </div>
       <div className={cl['todo-item__date']}>{getDateString(props.todo.date)}</div>
     </div>
-  )
+  );
 }
 
-export default TodoItem
+export default TodoItem;

@@ -2,6 +2,7 @@
   "name": "react-todos",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://neimisis.github.io/react-todos",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-brands-svg-icons": "^6.1.1",
@@ -19,7 +20,7 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.0",
+    "react-scripts": "^5.0.0",
     "react-transition-group": "^4.4.2",
     "reset-css": "^5.0.1",
     "web-vitals": "^2.1.4"
@@ -28,13 +29,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && gh-pages -d build",
+    "jslint": "eslint -c .eslintrc ./src/**/*.{js,jsx}",
+    "jslint-fix": "eslint -c .eslintrc ./src/**/*.{js,jsx} --fix"
   },
   "browserslist": {
     "production": [
@@ -47,5 +45,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.0",
+    "gh-pages": "^3.2.3"
+  },
+  "react-dotenv": {
+    "PUBLIC_URL": "/"
   }
 }

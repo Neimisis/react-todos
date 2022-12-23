@@ -1,19 +1,21 @@
-import React from 'react'
-import config from '../../../config.js'
-import TodoCount from './TodoCount/TodoCount'
-import TodoPagination from './TodoPagination/TodoPagination.jsx'
-import cl from './TodoNavigation.module.css'
+import React from 'react';
+
+import config from '../../../config.js';
+
+import TodoCount from './TodoCount/TodoCount.jsx';
+import TodoPagination from './TodoPagination/TodoPagination.jsx';
+import cl from './TodoNavigation.module.css';
 
 function TodoNavigation(props) {
 
-    if (config.showRenderComponents) console.log('TodoNavigation')
+  if (config.showRenderComponents) console.info('TodoNavigation');
 
-    return (
-        <div className={cl['todo-navigation']}>
-            <TodoPagination page={props.page} setPage={props.setPage} totalPage={props.totalPage}/>
-            <TodoCount countTodo={props.countTodo} />
-        </div>
-    )
+  return (
+    <div className={cl['todo-navigation']}>
+      <TodoPagination />
+      <TodoCount />
+    </div>
+  );
 }
 
-export default TodoNavigation
+export default TodoNavigation;
